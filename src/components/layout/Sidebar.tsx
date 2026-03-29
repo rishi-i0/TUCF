@@ -7,8 +7,11 @@ import {
   Globe, 
   Map, 
   Settings,
-  BarChart3,
-  BookOpen
+  FilePenLine,
+  Target,
+  Milestone,
+  Bot,
+  ScrollText,
 } from 'lucide-react';
 import './Sidebar.css';
 
@@ -22,8 +25,11 @@ const menuItems = [
   { path: '/ats', icon: FileText, label: 'ATS Scoring' },
   { path: '/portfolio', icon: Globe, label: 'Portfolio' },
   { path: '/roadmaps', icon: Map, label: 'Roadmaps' },
-  { path: '/analytics', icon: BarChart3, label: 'Analytics' },
-  { path: '/resources', icon: BookOpen, label: 'Resources' },
+  { path: '/cover-letter', icon: FilePenLine, label: 'Cover Letter Generator' },
+  { path: '/interview-prep', icon: Target, label: 'Interview Prep' },
+  { path: '/roadmap-generator', icon: Milestone, label: 'Roadmap Generator' },
+  { path: '/resume-builder', icon: ScrollText, label: 'Resume Builder' },
+  { path: '/ai-assistant', icon: Bot, label: 'AI Assistant' },
   { path: '/settings', icon: Settings, label: 'Settings' },
 ];
 
@@ -43,6 +49,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
                 key={item.path}
                 to={item.path}
                 className={`sidebar-item ${isActive ? 'active' : ''}`}
+                title={item.label}
               >
                 <Icon className="sidebar-icon" />
                 {isOpen && (
